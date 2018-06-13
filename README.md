@@ -1,2 +1,2 @@
-# express_wx
+# express-wx
 WeChat service based on Express.
