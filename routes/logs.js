@@ -2,9 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 router.route('/').get((req, res, next) => {
-  asdfasdfasd
   res.json({
-    download: 'OK'
+    download: 'OK，sa~'
   })
 })
 
