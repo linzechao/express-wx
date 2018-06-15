@@ -7,7 +7,8 @@ const Mock = require('mockjs')
 router.route('/').get((req, res, next) => {
   res.redirect('/api/users/page/1')
 })
-// 分类
+
+// 分页
 router.route('/page/:page').get((req, res, next) => {
   const page = +req.params.page || 1
   let result = { list: [] }
@@ -28,16 +29,14 @@ router.route('/page/:page').get((req, res, next) => {
     })
   }
 
-  res.json(
-    {
-      ...result,
-      page: {
-        total: 126,
-        p: page
-      },
-      message: 'nice...'
-    }
-  )
+  res.json({
+    ...result,
+    page: {
+      total: 126,
+      p: page
+    },
+    message: 'nice...'
+  })
 })
 
 module.exports = router
