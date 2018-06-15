@@ -20,6 +20,19 @@ app.use(cookieParser())
  */
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use('/', indexRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/logs', logsRouter)
+
+/*
+ * 404
+ */
+app.use((req, res, next) => {
+  res.status(404).send({
+    message: 'Sorry cant find that!'
+  })
+})
+
 /*
  * 500
  * 错误处理，必须显性带上 4 个参数
@@ -29,23 +42,5 @@ app.use((err, req, res, next) => {
     message: 'Something broke!'
   })
 })
-
-/*
- * 404
- */
-app.use((req, res, next) => {
-  // console.log(req)
-  // console.log(res)
-  next()
-  /*
-  res.status(404).send({
-    message: 'Sorry cant find that!'
-  })
-  */
-})
-
-app.use('/', indexRouter)
-app.use('/api/users', usersRouter)
-app.use('/api/logs', logsRouter)
 
 module.exports = app
