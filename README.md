@@ -12,7 +12,7 @@ WeChat service based on Express.
 yarn
 
 # windows 启动调试
-set DEBUG=express:* & yarn start
+set DEBUG=express:* & yarn dev
 
 # http://localhost:3000
 ```
