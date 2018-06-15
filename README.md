@@ -1,6 +1,6 @@
 # express-wx
 WeChat service based on Express.
-- [x][镜像地址](https://hub.docker.com/r/linzechao/express-wx/)
+- [镜像地址](https://hub.docker.com/r/linzechao/express-wx/)
 
 ### 主要命令
 ```bash
