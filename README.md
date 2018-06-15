@@ -1,8 +1,8 @@
 # express-wx
 WeChat service based on Express.
-- [镜像地址](https://hub.docker.com/r/linzechao/express-wx/)
+- [Docker 镜像](https://hub.docker.com/r/linzechao/express-wx/)
 
-### 主要命令
+### 命令
 ```bash
 # 构建镜像（Dockerfile 文件）
 # 最后一个点 [.] 表示当前目录
