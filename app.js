@@ -25,6 +25,26 @@ app.use('/api/users', usersRouter)
 app.use('/api/logs', logsRouter)
 
 /*
+ * 处理跨域问题
+ */
+app.all('*', (req, res, next) => {
+  const allowedOrigins = [
+    'http://localhost:5000',
+    'http://wx.mrsuper.top'
+  ];
+
+  const origin = req.headers.origin
+  if(allowedOrigins.indexOf(origin) >= 0){
+    res.setHeader('Access-Control-Allow-Origin', origin)
+  }
+
+  res.header('Access-Control-Allow-Credentials', true)
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
+  next()
+})
+
+/*
  * 404
  */
 app.use((req, res, next) => {

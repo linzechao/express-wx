@@ -33,7 +33,8 @@ router.route('/page/:page').get((req, res, next) => {
     ...result,
     page: {
       total: 126,
-      p: page
+      p: page,
+      totalPage: 13
     },
     message: 'nice...'
   })
