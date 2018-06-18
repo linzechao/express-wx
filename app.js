@@ -20,10 +20,6 @@ app.use(cookieParser())
  */
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', indexRouter)
-app.use('/api/users', usersRouter)
-app.use('/api/logs', logsRouter)
-
 /*
  * 处理跨域问题
  */
@@ -34,6 +30,10 @@ app.all('*', (req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
   next()
 })
+
+app.use('/', indexRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/logs', logsRouter)
 
 /*
  * 404

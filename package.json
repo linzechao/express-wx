@@ -1,10 +1,10 @@
 {
   "name": "express-wx",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "scripts": {
-    "dev": "node-dev ./bin/www",
-    "start": "node ./bin/www"
+    "dev": "set DEBUG=express:* && node-dev ./bin/www",
+    "start": "set DEBUG=express:* && node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",

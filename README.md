@@ -5,14 +5,13 @@ WeChat service based on Express.
 
 - [Docker 镜像](https://hub.docker.com/r/linzechao/express-wx/)
 
-
-### 开发
+### 本地开发
 ```bash
 # 安装
 yarn
 
 # windows 启动调试
-set DEBUG=express:* & yarn dev
+yarn dev
 
 # http://localhost:3000
 ```
