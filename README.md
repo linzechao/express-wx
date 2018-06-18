@@ -30,7 +30,8 @@ cd express-wx
 docker image build -t linzechao/express-wx:x.y.z .
 
 # 2. 生成进行并运行容器（瞬间级别启动）
-# docker container run -d -p 8000:3000 -it linzechao/express-wx:x.y.z
+# 测试加上 --rm 参数，停掉时自动删除容器
+# docker container run --rm -d -p 8000:3000 -it linzechao/express-wx:x.y.z
 docker container run -d -p 8000:3000 -it linzechao/express-wx
 # 查看 http://www.mrsuper.top:8000
 
