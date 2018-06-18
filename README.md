@@ -25,6 +25,7 @@ docker image pull linzechao/express-wx
 
 # 或者拉取源代码，自己构建镜像（Dockerfile 文件）
 git clone https://github.com/linzechao/express-wx.git
+cd express-wx
 # 构建（最后一个点 [.] 表示当前目录）
 docker image build -t linzechao/express-wx:x.y.z .
 
