@@ -38,3 +38,7 @@ docker container run -d -p 8000:3000 -it linzechao/express-wx
 # docker image push linzechao/express-wx:x.y.z
 docker image push linzechao/express-wx
 ```
+
+### 注意的坑
+- 跨域中间件处理**必须**放在所有路由**前面**
+- 400/500 中间件处理**必须**放在所有路由**后面**
