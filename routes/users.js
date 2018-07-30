@@ -29,15 +29,16 @@ router.route('/page/:page').get((req, res, next) => {
     })
   }
 
-  res.json({
-    ...result,
+  // 暂不支持对象解构：...result
+  res.json(Object.assign({}, {
+    code: 200,
     page: {
       total: 126,
       p: page,
       totalPage: 13
     },
     message: 'nice...'
-  })
+  }, result))
 })
 
 module.exports = router

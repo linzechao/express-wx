@@ -3,10 +3,6 @@ var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 
-var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
-var logsRouter = require('./routes/logs')
-
 var app = express()
 
 app.use(logger('dev'))
@@ -31,9 +27,10 @@ app.all('*', (req, res, next) => {
   next()
 })
 
-app.use('/', indexRouter)
-app.use('/api/users', usersRouter)
-app.use('/api/logs', logsRouter)
+app.use('/', require('./routes/index'))
+app.use('/api/users', require('./routes/users'))
+app.use('/api/logs', require('./routes/logs'))
+app.use('/api/menu', require('./routes/menu'))
 
 /*
  * 404
